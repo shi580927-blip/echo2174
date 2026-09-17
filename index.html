@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no" />
+  <meta name="theme-color" content="#06131a" />
+  <title>Эхо 2174 — тест сцены</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main id="viewport">
+    <section id="stage" aria-label="Эхо 2174 — контрольная сцена">
+      <div id="sceneLayer" class="scene-layer">
+        <img id="sceneImage" alt="Тестовый фас станции" draggable="false" />
+        <div id="inspectCursor" class="inspect-cursor" hidden></div>
+      </div>
+
+      <div class="ui-layer">
+        <div class="brand">ЭХО 2174</div>
+
+        <aside id="topDrawer" class="top-drawer">
+          <button id="topDrawerHandle" class="drawer-handle" aria-label="Скрыть меню">▶</button>
+          <div class="top-actions">
+            <button class="ar-button nav-button" data-panel="journalPanel"><span class="icon">▣</span><span>Журнал</span></button>
+            <button class="ar-button nav-button" data-panel="mapPanel"><span class="icon">⌖</span><span>Карта</span></button>
+            <button class="ar-button nav-button" data-panel="menuPanel"><span class="icon">⚙</span><span>Меню</span></button>
+          </div>
+        </aside>
+
+        <section id="dialogueDrawer" class="dialogue-drawer" aria-live="polite">
+          <button id="dialogueHandle" class="dialogue-handle" aria-label="Свернуть реплику">⌄</button>
+          <div class="speaker-avatar"><div class="arcady-shell"><div class="arcady-eye"></div></div></div>
+          <div class="dialogue-copy"><strong id="speakerName">Аркадий:</strong><p id="speakerText">Ну что ж. Попробуем смотреть, а не угадывать.</p></div>
+        </section>
+
+        <button id="inspectButton" class="inspect-button" aria-pressed="false"><span class="inspect-icon">⌕</span><span>Осмотреть</span></button>
+        <div id="inspectHint" class="inspect-hint" hidden>Коснитесь любой интересующей области</div>
+
+        <section id="cropPanel" class="crop-panel" hidden>
+          <div class="crop-heading"><div><strong>Наблюдение</strong><span>Это ещё не улика и не факт</span></div><button id="cancelObservationTop" class="crop-close">×</button></div>
+          <canvas id="cropCanvas" width="520" height="320"></canvas>
+          <label for="observationTitle">Название — необязательно</label>
+          <input id="observationTitle" maxlength="46" placeholder="Например: старая карта…" autocomplete="off" />
+          <div class="crop-actions">
+            <button id="saveObservation" class="text-button">Сохранить наблюдение</button>
+            <button id="retryObservation" class="text-button secondary">Выбрать заново</button>
+            <button id="cancelObservation" class="text-button secondary">Отмена</button>
+          </div>
+        </section>
+
+        <section id="journalPanel" class="side-panel journal-panel" hidden>
+          <button class="panel-close" data-close-panel>×</button>
+          <h2>Журнал</h2>
+          <p class="panel-note">Сначала наблюдение. Потом — анализ. Аркадий не выбирает улики за игрока.</p>
+          <div id="journalList" class="journal-list"></div>
+          <div class="versions-block"><h3>Версии</h3><div id="versionList" class="version-list"></div></div>
+        </section>
+
+        <section id="mapPanel" class="side-panel" hidden>
+          <button class="panel-close" data-close-panel>×</button>
+          <h2>Контрольный фас A</h2>
+          <p class="panel-note">Пока тестируем один компактный план: карта, скамья и прилегающая зона. Другие планы не производим до проверки на телефоне.</p>
+        </section>
+
+        <section id="menuPanel" class="side-panel" hidden>
+          <button class="panel-close" data-close-panel>×</button>
+          <h2>Тест Этапа 3</h2>
+          <p class="panel-note">Виртуальная сетка 1920×1080. Интерфейс — отдельный слой. Размеры кнопок зафиксированы как мобильный минимум.</p>
+          <button id="resetJournal" class="text-button secondary">Очистить журнал</button>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script>window.ECHO_SCENE_PARTS=[];</script>
+  <script src="scene/part01.js"></script><script src="scene/part02.js"></script><script src="scene/part03.js"></script><script src="scene/part04.js"></script><script src="scene/part05.js"></script><script src="scene/part06.js"></script><script src="scene/part07.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
