@@ -11,7 +11,8 @@
   <main id="viewport">
     <section id="stage" aria-label="Эхо 2174 — контрольная сцена">
       <div id="sceneLayer" class="scene-layer">
-        <img id="sceneImage" alt="Тестовый фас станции" draggable="false" />
+        <div id="sceneFallback" class="scene-fallback"><strong>ЭХО 2174 · ЭТАП 3</strong><span>Нужен файл assets/station-face-a.webp</span></div>
+        <img id="sceneImage" src="assets/station-face-a.webp" alt="Тестовый фас станции" draggable="false" />
         <div id="inspectCursor" class="inspect-cursor" hidden></div>
       </div>
 
@@ -72,8 +73,6 @@
     </section>
   </main>
 
-  <script>window.ECHO_SCENE_PARTS=[];</script>
-  <script src="scene/part01.js"></script><script src="scene/part02.js"></script><script src="scene/part03.js"></script><script src="scene/part04.js"></script><script src="scene/part05.js"></script><script src="scene/part06.js"></script><script src="scene/part07.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
